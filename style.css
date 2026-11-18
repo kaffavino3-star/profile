@@ -1,32 +1,62 @@
+
+/* =========================
+   RESET
+========================= */
+
 * {
-    box-sizing: border-box
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: 'segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: rgb(197, 87, 124);
-    color: black
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(
+        135deg,
+        #170d29,
+        #26143d,
+        #381b50
+    );
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
 }
+
+
+/* =========================
+   HALAMAN UTAMA
+========================= */
 
 .page {
     max-width: 1100px;
-    margin: 40px auto;
-    padding: 24px;
+    margin: 30px auto;
 }
+
+
+/* =========================
+   HERO / PROFIL
+========================= */
 
 .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 30px;
-    background: rgb(157, 88, 192);
-    backdrop-filter: blue;
-    border: 1px solid rgb(157, 88, 192);
-    box-shadow: 0 18px 40px rgb(168, 122, 190);
-    border-radius: 28px;
-    padding: 32px;
-    margin-bottom: 28px;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 25px;
+
+    padding: 40px;
+    margin-bottom: 25px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
 
 .profile-content {
@@ -35,84 +65,173 @@ body {
 
 .badge {
     display: inline-block;
-    background: linear-gradien(blue);
-    color: blueviolet;
-    padding: 8px 14px;
-    border-radius: 999px;
-    font-size: 11px;
+
+    background: linear-gradient(
+        135deg,
+        #9333ea,
+        #ec4899
+    );
+
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+
+    font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.08cm;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
-.judul {
-    margin: 0;
-    font-family: 'plus jakarta sans', 'segoe UI', sans-serif;
-    line-height: 1.4;
-}
-
 .judul-besar {
-    font-size: clamp(2.3rem, 4vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
-    color: black;
-    margin-top: 14px;
+    margin-top: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #e879f9
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-#text2 {
+.deskripsi {
+    color: #d1c5df;
+    font-size: 15px;
+    line-height: 1.8;
     margin-top: 12px;
-    max-width: 620px;
-    font-size: 1.08rem;
-    color: aquamarine;
-    text-align: left;
-    background: transparent
+    max-width: 600px;
+}
+
+.profile-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.profile-info span {
+    background: rgba(255, 255, 255, 0.09);
+    padding: 9px 13px;
+    border-radius: 10px;
+    font-size: 12px;
+    color: #f3d9ff;
+}
+
+
+/* =========================
+   FOTO PROFIL
+========================= */
+
+.photo-wrapper {
+    flex-shrink: 0;
 }
 
 .profile-photo {
-    width: 180px;
-    height: 180px;
+    width: 190px;
+    height: 190px;
+
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid rgb(191, 125, 221);
-    box-shadow: 0 16px 30px rgb(197, 87, 124);
+
+    border: 5px solid #c084fc;
+
+    box-shadow:
+        0 0 25px rgba(192, 132, 252, 0.4);
+
+    transition: transform 0.4s ease;
 }
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   GRID KONTEN
+========================= */
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(2, minimax(260px, 1fr));
-    gap: 24px;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
 }
 
+
+/* =========================
+   CARD
+========================= */
+
 .card {
-    background: rgb(255, 255, 255, 0.82);
-    border: 1px solid rgba(148, 163, 184, 0.18);
-    border-radius: 22px;
-    padding: 24px;
-    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+
+    padding: 25px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .card h2 {
-    margin-top: 0;
-    margin: bottom 18px;
-    color: #1e293b;
-    font-size: 1.5rem;
+    font-size: 21px;
+    color: #f5d0fe;
+    margin-bottom: 20px;
 }
 
+
+/* =========================
+   HOBI
+========================= */
+
 .hobby-list {
-    list-style: style none;
-    padding: 0;
-    margin: 0;
+    list-style: none;
+
     display: grid;
     gap: 12px;
 }
 
 .hobby-list li {
-    background: linear-gradient(135deg, #1e293b);
-    border-left: 4px solid #7c3aed;
-    padding: 12px 14px;
+    background: linear-gradient(
+        135deg,
+        #4c1d95,
+        #7e22ce
+    );
+
+    border-left: 4px solid #e879f9;
+
+    padding: 14px 16px;
     border-radius: 12px;
+
     font-weight: 600;
-    color: pink;
+
+    transition: transform 0.3s ease;
 }
+
+.hobby-list li:hover {
+    transform: translateX(7px);
+}
+
+
+/* =========================
+   SOSIAL MEDIA
+========================= */
 
 .sosial-links {
     display: flex;
@@ -120,17 +239,288 @@ body {
     gap: 12px;
 }
 
-.sosial-link a {
+.sosial-link {
+    display: inline-block;
+
     text-decoration: none;
-    color: aqua;
-    background: #7c3aed;
-    padding: 10px 14px;
+    color: white;
+
+    padding: 12px 17px;
     border-radius: 12px;
+
+    font-size: 13px;
     font-weight: 600;
-    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    transition: 0.3s ease;
 }
 
-.sosial-link a:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgb(157, 88, 192);
+.sosial-link:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.2);
+}
+
+.instagram {
+    background: linear-gradient(
+        135deg,
+        #833ab4,
+        #fd1d1d,
+        #fcb045
+    );
+}
+
+.tiktok {
+    background: #111111;
+    border: 1px solid #555555;
+}
+
+.facebook {
+    background: #1877f2;
+}
+
+
+/* =========================
+   FORM KONTAK
+========================= */
+
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 17px;
+}
+
+.field-group label {
+    color: #e9d5ff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.field-group input,
+.field-group textarea {
+    width: 100%;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 11px;
+
+    padding: 13px 15px;
+
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.field-group input::placeholder,
+.field-group textarea::placeholder {
+    color: #b9a9c9;
+}
+
+.field-group input:focus,
+.field-group textarea:focus {
+    border-color: #c084fc;
+    box-shadow: 0 0 10px rgba(192, 132, 252, 0.2);
+}
+
+.field-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-card button {
+    width: 100%;
+
+    background: linear-gradient(
+        135deg,
+        #9333ea,
+        #db2777
+    );
+
+    border: none;
+    border-radius: 11px;
+
+    padding: 14px;
+
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.form-card button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(147, 51, 234, 0.35);
+}
+
+.form-message {
+    color: #86efac;
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+
+/* =========================
+   JADWAL PELAJARAN
+========================= */
+
+.schedule-card {
+    grid-column: span 2;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 12px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 350px;
+
+    background: rgba(255, 255, 255, 0.04);
+}
+
+thead {
+    background: linear-gradient(
+        135deg,
+        #7e22ce,
+        #9333ea
+    );
+}
+
+th {
+    color: white;
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: #e9d5ff;
+    font-size: 13px;
+}
+
+.day {
+    color: #f0abfc;
+    font-weight: 700;
+    background: rgba(147, 51, 234, 0.12);
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    text-align: center;
+
+    margin-top: 30px;
+    padding: 25px;
+
+    color: #bdaacb;
+    font-size: 12px;
+    line-height: 2;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 12px;
+    }
+
+    .page {
+        margin: 10px auto;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 25px 18px;
+    }
+
+    .profile-info {
+        justify-content: center;
+    }
+
+    .deskripsi {
+        font-size: 13px;
+    }
+
+    .profile-photo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .schedule-card {
+        grid-column: span 1;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card h2 {
+        font-size: 19px;
+    }
+
+    .sosial-links {
+        gap: 8px;
+    }
+
+    .sosial-link {
+        font-size: 12px;
+        padding: 10px 13px;
+    }
+}
+
+
+/* =========================
+   HP KECIL
+========================= */
+
+@media (max-width: 400px) {
+
+    .judul-besar {
+        font-size: 2.5rem;
+    }
+
+    .profile-photo {
+        width: 125px;
+        height: 125px;
+    }
+
+    .profile-info span {
+        font-size: 10px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
 }
